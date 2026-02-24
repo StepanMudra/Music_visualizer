@@ -2,7 +2,7 @@ from transformers import pipeline
 import librosa
 from openai import OpenAI
 
-class Analyzator:
+class EmotionAnalyzer:
 
     def analyze_emotion(self, text):
         # Vytvoření pipeline pro analýzu emocí
@@ -33,7 +33,7 @@ text
 """
 
 
-analyzator = Analyzator()
+analyzator = EmotionAnalyzer()
 # Nastavení OpenAI API klíče
 client = OpenAI(api_key='api_klic')
 analyze = analyzator.analyze_emotion(text)
