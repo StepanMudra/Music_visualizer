@@ -1,11 +1,16 @@
 import configparser
+from dotenv import load_dotenv
+import os
 
-class Config_loader:
+class Configuration_loader:
 
     def __init__(self):
+        load_dotenv()
         self.__config = self.load_config()
         self.__text = self.__config['Song']['Text_of_song']
         self.__path = self.__config['Song']['Path_to_song']
+        self.__emotion_analysis_model = self.__config['Models']['Emotions']
+        self.__api_key = os.getenv("API_key")
 
     def load_config(self):
         config = configparser.ConfigParser()
@@ -19,5 +24,11 @@ class Config_loader:
     @property
     def get_path(self):
         return self.__path
+    @property
+    def get_emotion_analysis_model(self):
+        return self.__emotion_analysis_model
+    @property
+    def get_api_key(self):
+        return self.__api_key
 
-Config_loader().load_config()
+Configuration_loader().load_config()
