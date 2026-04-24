@@ -1,3 +1,7 @@
+class DescriptionMaker:
+
+    def __init__(self):
+
 analyze = analyzator.analyze_emotion(text)
 
 prompt = f"""
