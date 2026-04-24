@@ -10,3 +10,14 @@ class APIHandler:
     @property
     def get_client(self):
         return self.__client
+
+    def get_response(self, prompt, model):
+        return self.__client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": prompt,
+        }
+    ],
+    model=str(model),
+)
