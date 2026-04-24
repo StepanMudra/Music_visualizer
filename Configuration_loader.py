@@ -24,9 +24,11 @@ class Configuration_loader:
     @property
     def get_path(self):
         return self.__path
+
     @property
     def get_emotion_analysis_model(self):
         return self.__emotion_analysis_model
+
     @property
     def get_api_key(self):
         return self.__api_key
