@@ -22,6 +22,8 @@ class Configuration_loader:
 
         self.__api_key = os.getenv("API_key")
 
+        self.__number_of_iterations = self.__config['General']['Number_of_iterations']
+
     def load_config(self):
         config = configparser.ConfigParser(
             comment_prefixes=';',
