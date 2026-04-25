@@ -1,0 +1,6 @@
+transformers
+torch
+librosa
+openai
+python-dotenv
+numpy
