@@ -13,7 +13,10 @@ class Configuration_loader:
         self.__api_key = os.getenv("API_key")
 
     def load_config(self):
-        config = configparser.ConfigParser()
+        config = configparser.ConfigParser(
+            comment_prefixes=';',
+            inline_comment_prefixes=';'
+        )
         config.read('config.ini')
         return config
 
