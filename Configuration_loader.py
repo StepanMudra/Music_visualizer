@@ -71,5 +71,3 @@ class Configuration_loader:
     @property
     def get_number_of_iterations(self):
         return self.__number_of_iterations
-
-Configuration_loader().load_config()
