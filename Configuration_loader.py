@@ -16,6 +16,10 @@ class Configuration_loader:
         self.__text_model = self.__config['Models']['Text']
         self.__image_model = self.__config['Models']['Image']
 
+        self.__describer_first = self.__config['Models']['Describer_first']
+        self.__describer = self.__config['Models']['Describer']
+        self.__critic = self.__config['Models']['Critic']
+
         self.__api_key = os.getenv("API_key")
 
     def load_config(self):
@@ -49,5 +53,17 @@ class Configuration_loader:
     @property
     def get_image_model(self):
         return self.__image_model
+
+    @property
+    def get_describer_first(self):
+        return self.__describer_first
+
+    @property
+    def get_describer(self):
+        return self.__describer
+
+    @property
+    def get_critic(self):
+        return self.__critic
 
 Configuration_loader().load_config()
