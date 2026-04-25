@@ -13,7 +13,7 @@ Audio  → Music Analysis (librosa)         ─┼→ GPT-4o Describer → Criti
 1. **Emotion analysis** — `j-hartmann/emotion-english-distilroberta-base` classifies emotions from the song's lyrics (anger, joy, sadness, fear, disgust, surprise, neutral)
 2. **Music analysis** — librosa extracts tempo (BPM), key, mode (major/minor), and energy level from the audio file
 3. **First description** — GPT-4o generates a detailed visual description for a painter based on emotions + music characteristics + lyrics
-4. **Critic loop** — a second GPT-4o instance critiques the description, a third iterates and improves it (N times)
+4. **Critic loop** — GPT-4o critiques the description, then improves it based on the feedback (N iterations)
 5. **Image generation** — DALL-E 3 renders the final description
 
 ## Example Outputs
