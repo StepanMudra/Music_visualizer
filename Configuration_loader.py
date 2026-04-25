@@ -6,10 +6,16 @@ class Configuration_loader:
 
     def __init__(self):
         load_dotenv()
+
         self.__config = self.load_config()
+
         self.__text = self.__config['Song']['Text_of_song']
         self.__path = self.__config['Song']['Path_to_song']
+
         self.__emotion_analysis_model = self.__config['Models']['Emotions']
+        self.__text_model = self.__config['Models']['Text']
+        self.__image_model = self.__config['Models']['Image']
+
         self.__api_key = os.getenv("API_key")
 
     def load_config(self):
@@ -35,5 +41,13 @@ class Configuration_loader:
     @property
     def get_api_key(self):
         return self.__api_key
+
+    @property
+    def get_text_model(self):
+        return self.__text_model
+
+    @property
+    def get_image_model(self):
+        return self.__image_model
 
 Configuration_loader().load_config()
