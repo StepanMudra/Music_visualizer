@@ -16,9 +16,9 @@ class Configuration_loader:
         self.__text_model = self.__config['Models']['Text']
         self.__image_model = self.__config['Models']['Image']
 
-        self.__describer_first = self.__config['Models']['Describer_first']
-        self.__describer = self.__config['Models']['Describer']
-        self.__critic = self.__config['Models']['Critic']
+        self.__describer_first = self.__config['Prompts']['Describer_first']
+        self.__describer = self.__config['Prompts']['Describer']
+        self.__critic = self.__config['Prompts']['Critic']
 
         self.__api_key = os.getenv("API_key")
 
