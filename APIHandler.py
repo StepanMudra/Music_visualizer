@@ -11,13 +11,24 @@ class APIHandler:
     def get_client(self):
         return self.__client
 
-    def get_response(self, prompt, model):
-        return self.__client.chat.completions.create(
-    messages=[
-        {
-            "role": "user",
-            "content": prompt,
-        }
-    ],
-    model=str(model),
-)
+    def get_text_response(self, prompt, model):
+        response = self.__client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+            model=str(model),
+        )
+        return response.choices[0].message.content
+
+    def get_image_response(self, prompt, model):
+        response_image = self.__client.images.generate(
+            model=str(model),
+            prompt=prompt,
+            size="1024x1024",
+            quality="standard",
+            n=1,
+        )
+        return response_image.data[0].url
