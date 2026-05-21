@@ -28,7 +28,7 @@ class APIHandler:
             model=str(model),
             prompt=prompt,
             size="1024x1024",
-            quality="standard",
+            quality="medium",
             n=1,
         )
-        return response_image.data[0].url
+        return response_image

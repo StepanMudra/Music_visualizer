@@ -2,6 +2,7 @@ from Configuration_loader import Configuration_loader
 from DescriptionMaker import DescriptionMaker
 from EmotionAnalyzer import EmotionAnalyzer
 from APIHandler import APIHandler
+import base64
 class Engine:
 
     def run(self):
@@ -48,8 +49,12 @@ class Engine:
             print(response_describer)
             i += 1
 
-        image_url = api_handler.get_image_response(response_describer, image_model)
-        print(image_url)
+        result = api_handler.get_image_response(response_describer, image_model)
+        image_base64 = result.data[0].b64_json
+        image_bytes = base64.b64decode(image_base64)
 
+        # Save the image to a file
+        with open("image.png", "wb") as f:
+            f.write(image_bytes)
 Engine().run()
 
