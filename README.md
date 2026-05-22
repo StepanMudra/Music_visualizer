@@ -21,12 +21,12 @@ Audio  → Music Analysis (librosa)         ─┼→ GPT-4o Describer → Criti
 ### Rammstein — Du Hast
 *Emotion: anger 89% | Tempo: 123 BPM | Key: E major | Energy: high*
 
-![Du Hast](examples/du_hast.png)
+![Du Hast](examples/DALLE3_RETIRED/du_hast.png)
 
 ### Kde domov můj (Czech National Anthem) + Du Hast audio
 *Emotion: joy 82% | Tempo: 123 BPM | Key: E major | Energy: high*
 
-![Kde domov muj](examples/kde_domov_muj.png)
+![Kde domov muj](examples/DALLE3_RETIRED/kde_domov_muj.png)
 
 ## Installation
 
